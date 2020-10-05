@@ -8,6 +8,7 @@ package cse360assignment02;
 */
 public class AddingMachine {
 	  private int total;
+	  private String methodHistory = ""; // creating history string used to log methods and values used.
 	  /**
 	   * This method is used to initialize int total
 	   * @return nothing
@@ -15,6 +16,7 @@ public class AddingMachine {
 	  public AddingMachine () 
 	  {
 	    total = 0;  // not needed - included for clarity
+	    methodHistory = "0"; // initializing history string
 	  }
 	  
 	  /**
@@ -23,7 +25,7 @@ public class AddingMachine {
 	   */
 	  public int getTotal () 
 	  {
-	    return 0;
+	    return total;
 	  }
 	 
 	  /**
@@ -33,7 +35,8 @@ public class AddingMachine {
 	   */
 	  public void add (int value) 
 	  {
-		  
+		  total += value;
+		  methodHistory = methodHistory + " + " + value; // append " + value" to the history string
 	  }
 	  
 	   /**
@@ -43,7 +46,8 @@ public class AddingMachine {
 	   */
 	  public void subtract (int value) 
 	  {
-		  
+		  total -= value;							  
+		  methodHistory = methodHistory + " - " + value;	// append " - value" to the history string
 	  }
 	 
 	  /**
@@ -52,7 +56,7 @@ public class AddingMachine {
 	   */
 	  public String toString () 
 	  {
-	    return "";
+	    return methodHistory;	// returning the history string
 	  }
 	  
 	  /**
@@ -61,6 +65,7 @@ public class AddingMachine {
 	   */
 	  public void clear() 
 	  {
-		  
+		  methodHistory = "0"; // clearing the history string
+		  total = 0;			// reseting total to 0
 	  }
 	}
